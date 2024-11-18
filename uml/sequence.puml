@@ -1,0 +1,14 @@
+@startuml
+User -> HomeController: viewHome()
+User -> MenuController: viewMenu()
+User -> CartController: addToCart(menuId)
+
+if (not logged in) then
+    User -> AuthController: login()
+    AuthController --> User: redirect to menu
+endif
+
+User -> OrderController: placeOrder()
+User -> PaymentController: makePayment(orderId, paymentInfo)
+
+@enduml

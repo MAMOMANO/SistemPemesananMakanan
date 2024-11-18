@@ -1,0 +1,25 @@
+@startuml
+start
+:View Home;
+:View Menu;
+
+if (Is User Logged In?) then (yes)
+    :Add to Cart;
+    :View Cart;
+    :Place Order;
+    :Proceed to Payment;
+    :Make Payment;
+else (no)
+    :Redirect to Login;
+    if (User Chooses to Register?) then (yes)
+        :Register;
+        :Login;
+        :Redirect to Menu or Home;
+    else (no)
+        :Login;
+        :Redirect to Menu or Home;
+    endif
+endif
+
+stop
+@enduml

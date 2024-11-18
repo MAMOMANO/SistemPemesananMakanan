@@ -1,0 +1,24 @@
+' order dan menu
+@startuml
+class Order {
+    +id: int
+    +user_id: int
+    +order_date: DateTime
+}
+
+class Menu {
+    +id: int
+    +name: string
+    +price: float
+}
+
+class Order_Menu {
+    +order_id: int
+    +menu_id: int
+    +quantity: int
+}
+
+Order "0..*" -- "0..*" Menu : contains
+Order "1" -- "0..*" Order_Menu
+Menu "1" -- "0..*" Order_Menu
+@enduml

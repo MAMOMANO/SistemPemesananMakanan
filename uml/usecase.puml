@@ -1,0 +1,26 @@
+@startuml
+
+actor User
+
+rectangle "Food Ordering System" {
+    
+    User --> (View Home)
+    
+    User --> (View Menu)
+    
+    User --> (Add to Cart)
+    
+    User --> (Register)
+    
+    User --> (Login)
+    
+    User --> (View Orders)
+    
+    User --> (Make Payment)
+    
+    User --> (View Profile)
+    
+}
+
+@enduml
+

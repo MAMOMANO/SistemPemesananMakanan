@@ -1,0 +1,60 @@
+@startuml
+
+class User {
+    +id: Integer
+    +name: String
+    +email: String
+    +password: String
+    +register()
+    +login()
+}
+
+class Profile {
+    +id: Integer
+    +user_id: Integer
+    +address: String
+    +phone_number: String
+}
+
+class Menu {
+    +id: Integer
+    +name: String
+    +price: Decimal
+    +description: String
+    +getDetails()
+}
+
+class Order {
+    +id: Integer
+    +user_id: Integer
+    +order_date: DateTime
+    +total_amount: Decimal
+    +addOrder()
+}
+
+class OrderItem {
+    +id: Integer
+    +order_id: Integer
+    +menu_id: Integer
+    +quantity: Integer
+    +price: Decimal
+}
+
+class Payment {
+    +id: Integer
+    +order_id: Integer
+    +user_id: Integer
+    +amount: Decimal
+    +payment_method: String
+    +status: String
+    +processPayment()
+}
+
+User "1" -- "1" Profile
+User "1" -- "0..*" Order
+User "1" -- "0..*" Payment
+Order "1" -- "0..*" OrderItem
+OrderItem "0..*" -- "1" Menu
+Order "1" -- "1" Payment
+
+@enduml

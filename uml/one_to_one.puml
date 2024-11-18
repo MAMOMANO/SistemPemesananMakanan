@@ -1,0 +1,19 @@
+' relasi one to one antara user dan profiles
+@startuml 
+    class User {
+        +id: int
+        +name: string 
+        +email: string
+
+
+    }
+    class Profile {
+        +id: int
+        +user_id: int
+        +address: string
+    }
+User "1"--"1" profile : has a
+@enduml
+
+
+
