@@ -3,6 +3,8 @@
 @section('title', 'Home - Aplikasi Pemesanan Makanan')
 
 @section('content')
+    <h1>TES HALAMAN HOME BERHASIL</h1>
+
 <!-- Header Section -->
 <header class="text-center bg-dark text-white py-5">
     <h1>Selamat Datang di Aplikasi Pemesanan Makanan</h1>
